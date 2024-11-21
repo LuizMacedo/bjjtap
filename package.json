@@ -4,7 +4,7 @@
   "description": "BJJTap is a platform focused on delivering the latest Brazilian Jiu-Jitsu (BJJ) news, tournament highlights, athlete interviews, and expert insights. It serves as a central hub for BJJ enthusiasts, fostering community engagement and innovation.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "build": "next dev"
   },
   "author": "Luiz Macedo",
   "license": "MIT",
