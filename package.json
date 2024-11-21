@@ -1,7 +1,7 @@
 {
   "name": "bjjtap",
   "version": "1.0.0",
-  "description": "BJJTap is a platform focused on delivering the latest Brazilian Jiu-Jitsu (BJJ) news, tournament highlights, athlete interviews, and expert insights. It serves as a central hub for BJJ enthusiasts, fostering community engagement and innovation.",
+  "description": "BJJTap is a platform for Brazilian Jiu-Jitsu (BJJ) enthusiasts, providing the latest news, tournament highlights, athlete interviews, and expert insights. Serving as a central hub, BJJTap fosters community engagement, connects practitioners, and offers a comprehensive resource for everything BJJ.",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
