@@ -4,17 +4,21 @@
   "description": "BJJTap is a platform for Brazilian Jiu-Jitsu (BJJ) enthusiasts, providing the latest news, tournament highlights, athlete interviews, and expert insights. Serving as a central hub, BJJTap fosters community engagement, connects practitioners, and offers a comprehensive resource for everything BJJ.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker-compose -f infra/compose.yaml up -d",
+    "services:stop": "docker-compose -f infra/compose.yaml stop",
+    "services:down": "docker-compose -f infra/compose.yaml down",
     "build": "next build",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watchAll"
   },
   "author": "Luiz Macedo",
   "license": "MIT",
   "dependencies": {
     "next": "^13.1.6",
+    "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

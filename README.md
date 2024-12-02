@@ -11,6 +11,8 @@
 - node-pg-migrate - Database migration tool
 - git - Version control
 - GitHub - Code hosting platform
+- Docker - Containerization platform
+- postgresql-client - PostgreSQL client
 
 ### Prerequisites
 
