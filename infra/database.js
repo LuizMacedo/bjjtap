@@ -10,17 +10,25 @@ async function query(queryObject) {
     ssl: getSSLValue(),
   });
 
+  console.log('Connecting to the database...');
+
   try {
     await client.connect();
+    console.log('Successfully connected to the database.');
+
+    console.log('Executing query:', queryObject);
     const result = await client.query(queryObject);
+    console.log('Query executed successfully:', result);
+
     return result;
   }
   catch (error) {
-    console.error(error);
+    console.error('Error executing query:', error);
     throw error;
   }
   finally {
     await client.end();
+    console.log('Database connection closed.');
   }
 }
 
