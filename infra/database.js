@@ -3,11 +3,11 @@ import { Client } from 'pg';
 const getSSLValue = () => {
   if (process.env.POSTGRES_CA) {
     return {
-      ca: process.env.POSTGRES_CA,
-      rejectUnauthorized: true,
+      ca: process.env.POSTGRES_CA, // Use the CA certificate provided in the environment variable
+      rejectUnauthorized: true,    // Enforce strict SSL certificate validation
     };
   }
-  return false;
+  return process.env.NODE_ENV === 'development' ? false : { rejectUnauthorized: true };
 };
 
 async function query(queryObject) {
@@ -33,7 +33,7 @@ async function query(queryObject) {
     const result = await client.query(queryObject);
     return result;
   } catch (error) {
-    console.error(error);
+    console.error('Database connection error:', error.message);
     throw error;
   } finally {
     await client.end();
