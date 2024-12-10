@@ -4,7 +4,7 @@ const getSSLValue = () => {
   if (process.env.POSTGRES_CA) {
     return {
       ca: process.env.POSTGRES_CA, // Use the CA certificate provided in the environment variable
-      require: true
+      rejectUnauthorized: false,   // Do not reject unauthorized connections
     };
   }
   return process.env.NODE_ENV === 'development' ? false : { rejectUnauthorized: true };
