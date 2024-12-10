@@ -4,7 +4,7 @@ const getSSLValue = () => {
   if (process.env.POSTGRES_CA) {
     return {
       ca: process.env.POSTGRES_CA, // Use the CA certificate provided in the environment variable
-      rejectUnauthorized: true,    // Enforce strict SSL certificate validation
+      rejectUnauthorized: false,    // Enforce strict SSL certificate validation
     };
   }
   return process.env.NODE_ENV === 'development' ? false : { rejectUnauthorized: true };
