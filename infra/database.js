@@ -1,12 +1,30 @@
 import { Client } from 'pg';
 
+const getSSLValue = () => {
+  if (process.env.POSTGRES_CA) {
+    return {
+      ca: process.env.POSTGRES_CA,
+      rejectUnauthorized: true,
+    };
+  }
+  return false;
+};
+
 async function query(queryObject) {
+  const {
+    POSTGRES_HOST: host,
+    POSTGRES_PORT: port,
+    POSTGRES_USER: user,
+    POSTGRES_DB: database,
+    POSTGRES_PASSWORD: password,
+  } = process.env;
+
   const client = new Client({
-    host: process.env.POSTGRES_HOST,
-    port: process.env.POSTGRES_PORT,
-    user: process.env.POSTGRES_USER,
-    database: process.env.POSTGRES_DB,
-    password: process.env.POSTGRES_PASSWORD,
+    host,
+    port,
+    user,
+    database,
+    password,
     ssl: getSSLValue(),
   });
 
@@ -14,26 +32,14 @@ async function query(queryObject) {
     await client.connect();
     const result = await client.query(queryObject);
     return result;
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
     throw error;
-  }
-  finally {
+  } finally {
     await client.end();
   }
 }
 
 export default {
-  query: query,
-}
-
-function getSSLValue() {
-  if (process.env.POSTGRES_CA) {
-    return {
-      ca: process.env.POSTGRES_CA,
-      rejectUnauthorized: true,
-    };
-  }
-  return process.env.NODE_ENV === "development" ? false : true;
-}
+  query,
+};
