@@ -13,6 +13,8 @@
 - GitHub - Code hosting platform
 - Docker - Containerization platform
 - postgresql-client - PostgreSQL client
+- node-pg-migrate - Database migration tool
+- dotenv - Environment variable loader
 
 ### Prerequisites
 
