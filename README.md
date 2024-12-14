@@ -15,6 +15,7 @@
 - postgresql-client - PostgreSQL client
 - node-pg-migrate - Database migration tool
 - dotenv - Environment variable loader
+- dotenv-expand - Environment variable expander
 
 ### Prerequisites
 
