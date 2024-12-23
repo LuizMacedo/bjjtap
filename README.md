@@ -16,6 +16,10 @@
 - node-pg-migrate - Database migration tool
 - dotenv - Environment variable loader
 - dotenv-expand - Environment variable expander
+- async-retry - Asynchronous retry utility
+- concurrently - Run multiple commands concurrently (development)
+- jest - Testing framework
+- prettier - Code formatter
 
 ### Prerequisites
 
