@@ -26,6 +26,7 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y docker-compose
       - run: npm ci
       - run: npm run lint:prettier:check
+      - run: npm run lint:eslint:check
       - run: npm test
 
       - name: Build And Deploy
