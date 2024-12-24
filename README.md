@@ -1,6 +1,6 @@
 # bjjtap
 
-## Tech Stack
+## Technologies and Tools
 
 - Javascript - Programming language
 - React - Frontend
@@ -21,10 +21,5 @@
 - jest - Testing framework
 - prettier - Code formatter
 - ESLint - Linter
-
-### Prerequisites
-
-- nodejs lts/hydrogen
-- next@13.1.6
-- react@18.2.0
-- react-dom@18.2.0
+- eslint-plugin-jest - ESLint plugin for Jest
+- eslint-config-prettier - ESLint configuration for Prettier
