@@ -38,17 +38,19 @@ async function getNewClient() {
 
 export default {
   query,
-  getNewClient
+  getNewClient,
 };
 
 const getSSLValue = () => {
   if (process.env.POSTGRES_CA) {
     return {
       ca: process.env.POSTGRES_CA, // Use the CA certificate provided in the environment variable
-      rejectUnauthorized: true,   // Enforces strict certificate validation
+      rejectUnauthorized: true, // Enforces strict certificate validation
     };
   }
 
   // Default SSL settings for development or missing CA certificate
-  return process.env.NODE_ENV === "production" ? { rejectUnauthorized: true } : false;
+  return process.env.NODE_ENV === "production"
+    ? { rejectUnauthorized: true }
+    : false;
 };

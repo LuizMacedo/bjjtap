@@ -20,6 +20,7 @@
 - concurrently - Run multiple commands concurrently (development)
 - jest - Testing framework
 - prettier - Code formatter
+- ESLint - Linter
 
 ### Prerequisites
 
