@@ -21,7 +21,7 @@ export default async function migrations(request, response) {
       dir: join("infra", "migrations"),
       direction: "up",
       verbose: true,
-      migrationsTable: "pgmigrations"
+      migrationsTable: "pgmigrations",
     };
 
     if (request.method === "GET") {
@@ -41,9 +41,8 @@ export default async function migrations(request, response) {
 
       return response.status(200).json(migratedMigrations);
     }
-
   } catch (error) {
-    console.error(error)
+    console.error(error);
     throw error;
   } finally {
     await dbClient.end();

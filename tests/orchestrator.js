@@ -7,7 +7,7 @@ async function waitForAllServices() {
     return retry(fetchStatusPage, {
       retries: 100,
       minTimeout: 100,
-      maxTimeout: 1000
+      maxTimeout: 1000,
     });
 
     async function fetchStatusPage() {
@@ -20,5 +20,5 @@ async function waitForAllServices() {
 }
 
 export default {
-  waitForAllServices
+  waitForAllServices,
 };
