@@ -25,3 +25,4 @@
 - eslint-config-prettier - ESLint configuration for Prettier
 - commitlint/cli - Lint commit messages
 - commitlint/config-conventional - Shareable commitlint configuration
+- Husky - Git hooks
