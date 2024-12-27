@@ -4,6 +4,7 @@
 
 - Javascript - Programming language
 - React - Frontend
+- react-dom - React DOM
 - Next.js - React framework
 - Node.js - Javascript runtime
 - PostgreSQL - Database
@@ -27,3 +28,4 @@
 - commitlint/config-conventional - Shareable commitlint configuration
 - Husky - Git hooks
 - commitizen - Conventional commit messages
+- npm-check-updates - Check for outdated dependencies
