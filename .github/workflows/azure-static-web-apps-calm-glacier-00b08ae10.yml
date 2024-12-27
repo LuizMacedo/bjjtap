@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Azure Static Web Apps CD
 
 on:
   push:
@@ -19,15 +19,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-      - run: sudo apt-get update && sudo apt-get install -y docker-compose
-      - run: npm ci
-      - run: npm run lint:prettier:check
-      - run: npx commitlint --from $(git merge-base ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}) --to ${{ github.event.pull_request.head.sha }} --verbose
-      - run: npm test
 
       - name: Build And Deploy
         id: builddeploy
