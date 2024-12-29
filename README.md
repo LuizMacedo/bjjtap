@@ -6,6 +6,7 @@
 - React - Frontend
 - react-dom - React DOM
 - Next.js - React framework
+- SWR - React hooks library for data fetching
 - Node.js - Javascript runtime
 - PostgreSQL - Database
 - pg - PostgreSQL client for Node.js
