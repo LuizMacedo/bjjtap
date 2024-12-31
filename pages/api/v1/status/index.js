@@ -3,7 +3,6 @@ import { InternalServerError } from "infra/errors";
 
 async function status(request, response) {
   try {
-
     const updatedAt = new Date().toISOString();
 
     const databaseVersionResult = await database.query("SHOW server_version;");
@@ -36,7 +35,7 @@ async function status(request, response) {
     });
   } catch (error) {
     const publicErrorObject = new InternalServerError({
-      cause: error
+      cause: error,
     });
 
     console.log("Error inside the catch block of the status controller:");
