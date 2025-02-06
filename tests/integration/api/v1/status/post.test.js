@@ -18,7 +18,7 @@ describe("POST /api/v1/status", () => {
         name: "MethodNotAllowedError",
         message: "Method Not Allowed",
         action: "Verify if the HTTP method is correct",
-        status_code: 405
+        status_code: 405,
       });
     });
   });
