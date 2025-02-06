@@ -30,3 +30,4 @@
 - Husky - Git hooks
 - commitizen - Conventional commit messages
 - npm-check-updates - Check for outdated dependencies
+- next-connect - Middleware framework for Next.js
