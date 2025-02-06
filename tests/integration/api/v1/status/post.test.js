@@ -11,6 +11,15 @@ describe("POST /api/v1/status", () => {
         method: "POST",
       });
       expect(response.status).toBe(405);
+
+      const responseBody = await response.json();
+
+      expect(responseBody).toEqual({
+        name: "MethodNotAllowedError",
+        message: "Method Not Allowed",
+        action: "Verify if the HTTP method is correct",
+        status_code: 405
+      });
     });
   });
 });
