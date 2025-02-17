@@ -3,6 +3,7 @@ import { ServiceError } from "./errors.js";
 
 async function query(queryObject) {
   let client;
+
   try {
     client = await getNewClient();
     const result = await client.query(queryObject);
