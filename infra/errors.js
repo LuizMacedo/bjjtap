@@ -40,6 +40,48 @@ export class ServiceError extends Error {
   }
 }
 
+export class ValidationError extends Error {
+  constructor({ cause, message, action }) {
+    super(message || "A validation error occurred.", {
+      cause,
+    });
+
+    this.name = "ValidationError";
+    this.action = action || "Please check your input and try again.";
+    this.statusCode = 400;
+  }
+
+  toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      action: this.action,
+      status_code: this.statusCode,
+    };
+  }
+}
+
+export class NotFoundError extends Error {
+  constructor({ cause, message, action }) {
+    super(message || "Resource not found.", {
+      cause,
+    });
+
+    this.name = "NotFoundError";
+    this.action = action || "Please check the resource and try again.";
+    this.statusCode = 404;
+  }
+
+  toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      action: this.action,
+      status_code: this.statusCode,
+    };
+  }
+}
+
 export class MethodNotAllowedError extends Error {
   constructor() {
     super("Method Not Allowed");
